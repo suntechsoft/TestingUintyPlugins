@@ -9,6 +9,8 @@ public class MarketDemoController : MonoBehaviour
     [SerializeField] private Button _btnSizePlusX;
     [SerializeField] private Button _btnSizePlusY;
     [SerializeField] private UniWebView _webUniWebView;
+    [SerializeField] private Button _btnWebForward;
+    [SerializeField] private Button _btnWebBack;
 
     private void Awake()
     {
@@ -20,6 +22,8 @@ public class MarketDemoController : MonoBehaviour
             ChangeContentSize(new Vector2(0, _sizeDelta)));
         _btnSizeMinusY.onClick.AddListener(() =>
             ChangeContentSize(new Vector2(0, -_sizeDelta)));
+        _btnWebForward.onClick.AddListener(() => _webUniWebView.GoForward());
+        _btnWebBack.onClick.AddListener(()=> _webUniWebView.GoBack());
     }
 
     private void ChangeContentSize(Vector2 value)
